@@ -82,3 +82,22 @@
         Piercing: 4
   - type: Item
     sprite: ADT/Objects/Weapons/Melee/ussp_barzai_knife.rsi
+
+- type: entity
+  name: backstabber
+  parent: CombatKnife
+  id: ADTBackstabberKnife
+  description: A deadly knife intended for melee confrontations.
+  suffix: Spy
+  components:
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1.7
+    damage:
+      types:
+        Slash: 10
+        Piercing: 10
+  - type: BackstabDamageMultipilier
+    bonusDamage:
+      types:
+        Piercing: 100

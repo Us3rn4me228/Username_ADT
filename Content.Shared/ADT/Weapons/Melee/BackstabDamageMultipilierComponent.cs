@@ -10,5 +10,7 @@ namespace Content.Shared.Weapons.Melee.Backstab;
 public sealed partial class BackstabDamageMultipilierComponent : Component
 {
     [DataField]
+    public bool IgnoreResists = false;
+    [DataField]
     public DamageSpecifier BonusDamage = new();
 }
