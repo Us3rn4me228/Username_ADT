@@ -1,4 +1,5 @@
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Weapons.Melee.Events;
 
 namespace Content.Shared.Weapons.Melee.Backstab;
@@ -19,7 +20,7 @@ public sealed class BackstabDamageMultipilierSystem : EntitySystem
             var degrees = Transform(damaged).LocalRotation.Degrees - Transform(args.User).LocalRotation.Degrees;
             if (degrees >= 300 || degrees <= 60 && degrees >= -30) // проверка  на градус, работает криво
             {
-                _damageable.TryChangeDamage(damaged, ent.Comp.BonusDamage, origin:args.User);
+                _damageable.TryChangeDamage(damaged, ent.Comp.BonusDamage, ent.Comp.IgnoreResists, origin:args.User);
             }
         }
     }

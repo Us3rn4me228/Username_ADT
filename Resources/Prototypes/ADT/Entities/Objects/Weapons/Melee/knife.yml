@@ -98,6 +98,7 @@
         Slash: 10
         Piercing: 10
   - type: BackstabDamageMultipilier
+    ignoreResists: true
     bonusDamage:
       types:
         Piercing: 100
