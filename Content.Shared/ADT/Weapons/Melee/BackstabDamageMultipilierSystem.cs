@@ -19,6 +19,8 @@ public sealed class BackstabDamageMultipilierSystem : EntitySystem
         foreach (var damaged in args.HitEntities)
         {
             if (damaged == args.User) continue; // проверка на пользователя оружия
+            if (args.Iswide)
+                return; // проверка на точечный удар
             if (!TryComp(damaged, out DamageableComponent? dmgcmp))
                 return;
             if (!TryComp(damaged, out MobStateComponent? crit))
